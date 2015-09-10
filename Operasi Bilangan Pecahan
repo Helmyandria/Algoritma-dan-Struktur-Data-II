@@ -1,0 +1,65 @@
+def input ()
+print "Masukkan pembilang pertama : "
+@a = gets.to_i
+print "Masukkan penyebut pertama : "
+@b = gets.to_i
+print "Masukkan pembilang kedua : "
+@c = gets.to_i
+print "Masukkan penyebut kedua : "
+@d = gets.to_i
+end
+
+puts "=======Operasi Bilangan Pecahan======="
+puts "Program Calculator Bilangan Pecahan \n"
+
+begin
+puts "1. Penjumlahan\n"
+puts "2. Pengurangan\n"
+puts "3. Perkalian\n"
+puts "4. Pembagian\n"
+puts "5. Keluar\n"
+print "Masukkan Pilihan anda: "
+pilihan = gets.to_i
+
+if pilihan == 1
+puts "=======Operasi Penjumlahan======="
+input
+if @b!=@d
+hasil_penyebut = @b*@d
+hasil_pembilang = (hasil_penyebut/@b*@a)+(hasil_penyebut/@d*@c)
+puts @a.to_s+"/"+@b.to_s+" + "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+else
+hasil_pembilang = @a+@c
+hasil_penyebut = @b
+puts @a.to_s+"/"+@b.to_s+" + "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+end
+elsif pilihan == 2
+puts "=======Operasi Pengurangan======="
+input
+if @b!=@d
+hasil_penyebut = @b*@d
+hasil_pembilang = (hasil_penyebut/@b*@a)-(hasil_penyebut/@d*@c)
+puts @a.to_s+"/"+@b.to_s+" - "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+else
+hasil_pembilang = @a-@c
+hasil_penyebut = @b
+puts @a.to_s+"/"+@b.to_s+" - "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+end
+elsif pilihan == 3
+puts "=======Operasi Perkalian======="
+input
+hasil_pembilang = @a*@c
+hasil_penyebut = @b*@d
+puts @a.to_s+"/"+@b.to_s+" x "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+elsif pilihan == 4
+puts "=======Operasi Pembagian======="
+input
+hasil_pembilang = @a*@d
+hasil_penyebut = @b*@c
+puts @a.to_s+"/"+@b.to_s+" : "+@c.to_s+"/"+@d.to_s+" = "+hasil_pembilang.to_s + "/" + hasil_penyebut.to_s
+elsif pilihan == 5
+puts "=======Bye Bye======="
+else pilihan >5
+puts "=======PILIHAN SALAH !! [COBA LAGI]======="
+end
+end while pilihan<=4 || pilihan>5
