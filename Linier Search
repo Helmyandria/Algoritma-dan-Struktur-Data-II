@@ -1,0 +1,35 @@
+package linier_search;
+
+import java.util.Scanner;
+
+public class Linier_Search {
+
+    public static void main(String[] args) {
+        int i, n, cari, array[];
+ 
+    Scanner input = new Scanner(System.in);
+    System.out.print("Masukkan banyak angka : ");
+    n = input.nextInt(); 
+    array = new int[n];
+    
+    System.out.println("Masukkan angkanya : ");
+ 
+    for (i = 0; i < n; i++)
+      array[i] = input.nextInt();
+ 
+    System.out.print("Masukkan angka yang dicari : ");
+    cari = input.nextInt();
+ 
+    for (i = 0; i < n; i++) {
+      if (array[i] == cari)
+      {
+         System.out.println("Angka "+cari + " terdapat pada index ke " + (i + 1) + ".");
+          break;
+      }
+   }
+   if (i == n)
+      System.out.println("Angka "+cari + " tidak ada dalam array.");
+   
+   
+    }
+}
